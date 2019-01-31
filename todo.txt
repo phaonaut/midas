@@ -7,7 +7,7 @@ Red BG for Clear Icon and Clear the Canvas
 
 Disable all Icons except the ones that work
 
-Add Tool Tips
+Add Tool Tips to icons
 
 Make it so sketch on counts/draws if you are on the sketch
 

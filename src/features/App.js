@@ -9,11 +9,23 @@ const ToolBarWithDragMe = withDragMe(ToolBar, "toolbar", {top: 5, left: 5});
 const P5WrapperWithDragMe = withDragMe(P5Wrapper, "p5wrapper", {top: 5, left: 100});
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = this.getInitialState();
+  }
+  getInitialState() {
+    return {
+      saveImage: false
+    };
+  }
+  onDownloadImage = () => {
+    this.setState({saveImage: true});
+  }
   render() {
     return (
       <div className="App">
-        <ToolBarWithDragMe />
-        <P5WrapperWithDragMe sketch={sketch} />
+        <ToolBarWithDragMe onDownloadImage={this.onDownloadImage} />
+        <P5WrapperWithDragMe sketch={sketch} saveImage={this.state.saveImage} />
       </div>
     );
   }

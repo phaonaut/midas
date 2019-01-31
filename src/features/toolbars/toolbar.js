@@ -49,34 +49,34 @@ class BrushToolBar extends React.Component {
           <ToggleButton value="brush">
             <BrushIcon />
           </ToggleButton>
-          <ToggleButton value="edit">
+          <ToggleButton value="edit" disabled>
             <EditIcon />
           </ToggleButton>
-          <ToggleButton value="colorize">
+          <ToggleButton value="colorize" disabled>
             <ColorizeIcon />
           </ToggleButton>
-          <ToggleButton value="crop">
+          <ToggleButton value="crop" disabled>
             <CropIcon />
           </ToggleButton>
-          <ToggleButton value="colorlens">
+          <ToggleButton value="colorlens" disabled>
             <ColorLensIcon />
           </ToggleButton>
-          <ToggleButton value="formatcolorfill">
+          <ToggleButton value="formatcolorfill" disabled>
             <FormatColorFillIcon />
           </ToggleButton>
 
           <ToggleButton disabled value="blankspace" />
           
-          <ToggleButton value="savealt">
+          <ToggleButton value="savealt" onClick={this.props.onDownloadImage}>
             <SaveAltIcon />
           </ToggleButton>
-          <ToggleButton value="save">
+          <ToggleButton value="save" disabled>
             <SaveIcon />
           </ToggleButton>
           
           <ToggleButton disabled value="blankspace" />
           
-          <ToggleButton value="deleteforever">
+          <ToggleButton value="deleteforever" disabled>
             <DeleteForeverIcon />
           </ToggleButton>
 
@@ -88,6 +88,7 @@ class BrushToolBar extends React.Component {
 
 BrushToolBar.propTypes = {
   classes: PropTypes.object.isRequired,
+  onDownloadImage: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(BrushToolBar);

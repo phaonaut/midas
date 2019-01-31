@@ -9,11 +9,15 @@ export default function sketch(p) {
       p.background('white');
     };
   
-    // p.myCustomRedrawAccordingToNewPropsHandler = function(props) {
-    //   if (props.rotation) {
-    //     rotation = (props.rotation * Math.PI) / 180;
-    //   }
-    // };
+    p.myCustomRedrawAccordingToNewPropsHandler = function(props) {
+      // if (props.rotation) {
+      //   rotation = (props.rotation * Math.PI) / 180;
+      // }
+      if(props.saveImage) {
+        p.saveCanvas("mydrawing", "jpg");
+      }
+
+    };
   
     p.draw = function() {
       console.log("!! mouse", p.mouseX, p.mouseY);
