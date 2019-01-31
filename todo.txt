@@ -1,6 +1,13 @@
 Create two tool blocks, disable things that arent ready
 
-Adjust draggable look and size
+
+Drawing only when hovering a live draw area
+
+Red BG for Clear Icon and Clear the Canvas
+
+Disable all Icons except the ones that work
+
+Add Tool Tips
 
 Make it so sketch on counts/draws if you are on the sketch
 

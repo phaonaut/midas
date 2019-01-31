@@ -5,7 +5,7 @@ export default function sketch(p) {
     var brushSize = 40; //starting brush size
   
     p.setup = function() {
-      p.createCanvas(600, 400, p.P2D);
+      p.createCanvas(500, 400, p.P2D);
       p.background('white');
     };
   
