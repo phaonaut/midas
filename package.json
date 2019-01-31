@@ -1,8 +1,12 @@
 {
   "name": "midas",
-  "version": "0.1.0",
+  "version": "0.1.0-SNAPSHOT",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.1",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/lab": "^3.0.0-alpha.29",
+    "p5": "^0.7.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
