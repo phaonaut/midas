@@ -1,11 +1,7 @@
-Setup basic sketch to see if the drawing stuff lines up
+Create two tool blocks, disable things that arent ready
 
-Look into toggle-button stuff in material-ui-lab
+Adjust draggable look and size
 
-Do a layout with floating tools
-
-Draggable HOC
-
-Build Out Look that is disabled
+Make it so sketch on counts/draws if you are on the sketch
 
 Build Out functionality and slowly build online
