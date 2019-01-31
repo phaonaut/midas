@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-
 import BrushIcon from '@material-ui/icons/Brush';
 import ColorizeIcon from '@material-ui/icons/Colorize';
 import ColorLensIcon from '@material-ui/icons/ColorLens';
@@ -29,6 +28,11 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column"
   },
+  trashIcon: {
+    "&:hover": {
+      backgroundColor: "red"
+    }
+  }
 });
 
 class BrushToolBar extends React.Component {
@@ -76,7 +80,7 @@ class BrushToolBar extends React.Component {
           
           <ToggleButton disabled value="blankspace" />
           
-          <ToggleButton value="deleteforever" disabled>
+          <ToggleButton value="deleteforever" className={classes.trashIcon} onClick={this.props.onClearCanvas}>
             <DeleteForeverIcon />
           </ToggleButton>
 
@@ -88,7 +92,8 @@ class BrushToolBar extends React.Component {
 
 BrushToolBar.propTypes = {
   classes: PropTypes.object.isRequired,
-  onDownloadImage: PropTypes.func.isRequired
+  onDownloadImage: PropTypes.func.isRequired,
+  onClearCanvas: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(BrushToolBar);

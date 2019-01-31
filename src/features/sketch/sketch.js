@@ -16,6 +16,9 @@ export default function sketch(p) {
       if(props.saveImage) {
         p.saveCanvas("mydrawing", "jpg");
       }
+      if(props.clearCanvas) {
+        p.background('white');
+      }
 
     };
   

@@ -15,17 +15,21 @@ class App extends Component {
   }
   getInitialState() {
     return {
-      saveImage: false
+      saveImage: false,
+      clearCanvas: false
     };
   }
   onDownloadImage = () => {
     this.setState({saveImage: true});
   }
+  onClearCanvas = () => {
+    this.setState({...this.getInitialState(), clearCanvas: true});
+  }
   render() {
     return (
       <div className="App">
-        <ToolBarWithDragMe onDownloadImage={this.onDownloadImage} />
-        <P5WrapperWithDragMe sketch={sketch} saveImage={this.state.saveImage} />
+        <ToolBarWithDragMe onDownloadImage={this.onDownloadImage} onClearCanvas={this.onClearCanvas} />
+        <P5WrapperWithDragMe sketch={sketch} saveImage={this.state.saveImage} clearCanvas={this.state.clearCanvas} />
       </div>
     );
   }
