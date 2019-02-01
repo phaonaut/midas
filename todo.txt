@@ -8,6 +8,12 @@ Project info box, has canvas size and other info
 
 Cant draw unless drawing tool is selected
 
+replace cursor with brush image
+https://stackoverflow.com/questions/49703094/how-can-i-replace-my-cursor-with-a-circle-instead-of-drawing-it-to-canvas-in-p5
+
+add app border and menu (file, edit, create)
+
+add a save menu where you can enter custom file name and save type
 
 Make it so sketch on counts/draws if you are on the sketch
 

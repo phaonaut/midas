@@ -18,14 +18,24 @@ class App extends Component {
   getInitialState() {
     return {
       saveImage: false,
-      clearCanvas: false
+      clearCanvas: false,
+      brush: {
+        radius: 50,
+        stroke: 0
+      }
     };
   }
   onDownloadImage = () => {
-    this.setState({...this.getInitialState(), saveImage: true});
+    this.setState({saveImage: true});
   }
   onClearCanvas = () => {
-    this.setState({...this.getInitialState(), clearCanvas: true});
+    this.setState({clearCanvas: true});
+  }
+  onUpdateBrushRadius = value => {
+    this.setState({...this.state, brush: {...this.state.brush, radius: value}});
+  }
+  resetStatetoDefault = state => {
+    this.setState({[state]: this.getInitialState()[state]});
   }
   render() {
     return (
@@ -38,8 +48,13 @@ class App extends Component {
           sketch={sketch}
           saveImage={this.state.saveImage}
           clearCanvas={this.state.clearCanvas}
+          brush={this.state.brush}
+          resetStatetoDefault={this.resetStatetoDefault}
         />
-        <BrushToolbarWithDragMe />
+        <BrushToolbarWithDragMe
+          onUpdateBrushRadius={this.onUpdateBrushRadius}
+          brushRadius={this.state.brushRadius}
+        />
       </div>
     );
   }

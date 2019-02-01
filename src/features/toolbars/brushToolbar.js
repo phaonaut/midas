@@ -28,16 +28,22 @@ const styles = theme => ({
 
 class BrushToolbar extends React.Component {
   state = {
-    value: 50,
+    brushValue: 50,
+    strokeValue: 0,
   };
 
-  handleChange = (event, value) => {
-    this.setState({ value });
+  handleBrushChange = (event, brushValue) => {
+    this.setState({ brushValue });
+    this.props.onUpdateBrushRadius(brushValue);
+  };
+
+  handleStrokeChange = (event, strokeValue) => {
+    this.setState({ strokeValue });
   };
 
   render() {
     const { classes } = this.props;
-    const { value } = this.state;
+    const { brushValue, strokeValue } = this.state;
 
     return (
       <div className={classes.container}>
@@ -45,19 +51,20 @@ class BrushToolbar extends React.Component {
           <Typography>Radius</Typography>
           <Slider
             classes={{ container: classes.slider }}
-            value={value}
-            onChange={this.handleChange}
+            value={brushValue}
+            onChange={this.handleBrushChange}
             />
-          <Typography>{Math.round(value)}</Typography>
+          <Typography>{Math.round(brushValue)}</Typography>
         </div>
         <div className={classes.sliderContainer}>
           <Typography>Stroke</Typography>
           <Slider
             classes={{ container: classes.slider }}
-            value={value}
-            onChange={this.handleChange}
+            value={strokeValue}
+            onChange={this.handleStrokeChange}
+            disabled
             />
-          <Typography>{Math.round(value)}</Typography>
+          <Typography>{Math.round(strokeValue)}</Typography>
         </div>
       </div>
     );
@@ -66,6 +73,8 @@ class BrushToolbar extends React.Component {
 
 BrushToolbar.propTypes = {
   classes: PropTypes.object.isRequired,
+  brushRadius: PropTypes.number.isRequired,
+  onUpdateBrushRadius: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(BrushToolbar);
