@@ -19,15 +19,15 @@ export default function sketch(p) {
       }
       if(props.brush) {
         brushRadius = props.brush.radius;
+        fillColor = props.brush.fillColor;
       }
-
     };
   
     p.draw = function() {
       if (p.mouseIsPressed) {
         p.fill(fillColor);
         p.ellipse(p.mouseX, p.mouseY, brushRadius, brushRadius, 50);
-        p.stroke(strokeColor);
+        // p.stroke(strokeColor);
         // p.filter( p.BLUR, 6 ); //slow as fudge
       } else {
         p.noFill();

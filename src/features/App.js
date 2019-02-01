@@ -6,10 +6,12 @@ import withDragMe from "./util/withDragMe";
 import MenuBar from "./toolbars/menuBar";
 import Toolbar from "./toolbars/toolbar";
 import BrushToolbar from "./toolbars/brushToolbar";
+import ColorPickerBar from "./toolbars/colorPickerBar";
 
 const ToolbarWithDragMe = withDragMe(Toolbar, "toolbar", {top: 5, left: 5});
 const P5WrapperWithDragMe = withDragMe(P5Wrapper, "p5wrapper", {top: 5, left: 100});
-const BrushToolbarWithDragMe = withDragMe(BrushToolbar, "brushtoolbar", {top: 500, left: 100});
+const BrushToolbarWithDragMe = withDragMe(BrushToolbar, "brushtoolbar", {top: 500, left: 50});
+const ColorPickerBarWithDragMe = withDragMe(ColorPickerBar, "colorpickerbar", {top: 5, left: 620});
 
 class App extends Component {
   constructor(props, context) {
@@ -22,7 +24,9 @@ class App extends Component {
       clearCanvas: false,
       brush: {
         radius: 50,
-        stroke: 0
+        stroke: 0,
+        fillColor: 'gold',
+        strokeColor: null
       }
     };
   }
@@ -35,6 +39,9 @@ class App extends Component {
   onUpdateBrushRadius = value => {
     this.setState({...this.state, brush: {...this.state.brush, radius: value}});
   }
+  onColorSelected = value => {
+    this.setState({...this.state, brush: {...this.state.brush, fillColor: value}});
+  }
   resetStatetoDefault = state => {
     this.setState({[state]: this.getInitialState()[state]});
   }
@@ -46,18 +53,21 @@ class App extends Component {
           <ToolbarWithDragMe
             onDownloadImage={this.onDownloadImage}
             onClearCanvas={this.onClearCanvas}
-            />
+          />
           <P5WrapperWithDragMe
             sketch={sketch}
             saveImage={this.state.saveImage}
             clearCanvas={this.state.clearCanvas}
             brush={this.state.brush}
             resetStatetoDefault={this.resetStatetoDefault}
-            />
+          />
           <BrushToolbarWithDragMe
             onUpdateBrushRadius={this.onUpdateBrushRadius}
             brushRadius={this.state.brushRadius}
-          />`
+          />
+          <ColorPickerBarWithDragMe
+            onColorSelected={this.onColorSelected}
+          />
         </div>
       </div>
     );
