@@ -3,10 +3,12 @@ import './App.css';
 import P5Wrapper from "./util/P5Wrapper";
 import sketch from "./sketch/sketch";
 import withDragMe from "./util/withDragMe";
-import ToolBar from "./toolbars/toolbar"
+import Toolbar from "./toolbars/toolbar";
+import BrushToolbar from "./toolbars/brushToolbar";
 
-const ToolBarWithDragMe = withDragMe(ToolBar, "toolbar", {top: 5, left: 5});
+const ToolbarWithDragMe = withDragMe(Toolbar, "toolbar", {top: 5, left: 5});
 const P5WrapperWithDragMe = withDragMe(P5Wrapper, "p5wrapper", {top: 5, left: 100});
+const BrushToolbarWithDragMe = withDragMe(BrushToolbar, "brushtoolbar", {top: 500, left: 100});
 
 class App extends Component {
   constructor(props, context) {
@@ -20,7 +22,7 @@ class App extends Component {
     };
   }
   onDownloadImage = () => {
-    this.setState({saveImage: true});
+    this.setState({...this.getInitialState(), saveImage: true});
   }
   onClearCanvas = () => {
     this.setState({...this.getInitialState(), clearCanvas: true});
@@ -28,8 +30,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ToolBarWithDragMe onDownloadImage={this.onDownloadImage} onClearCanvas={this.onClearCanvas} />
-        <P5WrapperWithDragMe sketch={sketch} saveImage={this.state.saveImage} clearCanvas={this.state.clearCanvas} />
+        <ToolbarWithDragMe
+          onDownloadImage={this.onDownloadImage}
+          onClearCanvas={this.onClearCanvas}
+        />
+        <P5WrapperWithDragMe
+          sketch={sketch}
+          saveImage={this.state.saveImage}
+          clearCanvas={this.state.clearCanvas}
+        />
+        <BrushToolbarWithDragMe />
       </div>
     );
   }
