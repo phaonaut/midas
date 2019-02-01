@@ -3,6 +3,7 @@ import './App.css';
 import P5Wrapper from "./util/P5Wrapper";
 import sketch from "./sketch/sketch";
 import withDragMe from "./util/withDragMe";
+import MenuBar from "./toolbars/menuBar";
 import Toolbar from "./toolbars/toolbar";
 import BrushToolbar from "./toolbars/brushToolbar";
 
@@ -40,21 +41,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ToolbarWithDragMe
-          onDownloadImage={this.onDownloadImage}
-          onClearCanvas={this.onClearCanvas}
-        />
-        <P5WrapperWithDragMe
-          sketch={sketch}
-          saveImage={this.state.saveImage}
-          clearCanvas={this.state.clearCanvas}
-          brush={this.state.brush}
-          resetStatetoDefault={this.resetStatetoDefault}
-        />
-        <BrushToolbarWithDragMe
-          onUpdateBrushRadius={this.onUpdateBrushRadius}
-          brushRadius={this.state.brushRadius}
-        />
+        <MenuBar/>
+        <div style={{position: "relative"}}>
+          <ToolbarWithDragMe
+            onDownloadImage={this.onDownloadImage}
+            onClearCanvas={this.onClearCanvas}
+            />
+          <P5WrapperWithDragMe
+            sketch={sketch}
+            saveImage={this.state.saveImage}
+            clearCanvas={this.state.clearCanvas}
+            brush={this.state.brush}
+            resetStatetoDefault={this.resetStatetoDefault}
+            />
+          <BrushToolbarWithDragMe
+            onUpdateBrushRadius={this.onUpdateBrushRadius}
+            brushRadius={this.state.brushRadius}
+          />`
+        </div>
       </div>
     );
   }
