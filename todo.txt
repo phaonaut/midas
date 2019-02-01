@@ -1,12 +1,11 @@
 Drawing only when hovering a live draw area
 
-Color picker tool bar, button displays this panel
-
-Brush/Pencil Toolbar size and other slider options
-
 Project info box, has canvas size and other info
 
 Cant draw unless drawing tool is selected
+
+
+replace fave icon with gold square
 
 replace cursor with brush image
 https://stackoverflow.com/questions/49703094/how-can-i-replace-my-cursor-with-a-circle-instead-of-drawing-it-to-canvas-in-p5
@@ -19,4 +18,8 @@ Build Out functionality and slowly build online
 
 ---------------
 
+
+x add midas name to header
+x Color picker tool bar, button displays this panel
+x Brush/Pencil Toolbar size and other slider options
 X add app border and menu (file, edit, create)

@@ -1,6 +1,6 @@
 export default function sketch(p) {
     var fillColor = "#4286f4"; //staring color
-    var strokeColor = "#4286f4"; //staring stroke color
+    // var strokeColor = "#4286f4"; //staring stroke color
     var brushRadius = 40; //starting brush size
   
     p.setup = function() {
