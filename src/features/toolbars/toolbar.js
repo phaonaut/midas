@@ -1,17 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-import BrushIcon from '@material-ui/icons/Brush';
-import ColorizeIcon from '@material-ui/icons/Colorize';
-import ColorLensIcon from '@material-ui/icons/ColorLens';
-import CropIcon from '@material-ui/icons/Crop';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import FormatColorFillIcon from '@material-ui/icons/FormatColorFill';
-import SaveAltIcon from '@material-ui/icons/SaveAlt';
-import SaveIcon from '@material-ui/icons/Save';
+import {Tooltip, withStyles} from '@material-ui/core';
+import {ToggleButton, ToggleButtonGroup} from '@material-ui/lab';
+import {Brush as BrushIcon, Colorize as ColorizeIcon, ColorLens as ColorLensIcon,
+        Crop as CropIcon, DeleteForever as DeleteForeverIcon, Edit as EditIcon,
+        FormatColorFill as FormatColorFillIcon, SaveAlt as SaveAltIcon, Save as SaveIcon} from '@material-ui/icons';
 
 const styles = theme => ({
   toggleContainer: {
@@ -37,8 +30,7 @@ const styles = theme => ({
 
 class BrushToolBar extends React.Component {
   state = {
-    selectedTool: 'brush',
-    formats: ['bold'],
+    selectedTool: 'brush'
   };
 
   handleAlignment = (event, selectedTool) => this.setState({ selectedTool });
@@ -51,37 +43,61 @@ class BrushToolBar extends React.Component {
       <div className={classes.toggleContainer}>
         <ToggleButtonGroup className={classes.root} value={selectedTool} exclusive onChange={this.handleAlignment}>
           <ToggleButton value="brush">
-            <BrushIcon />
+            <Tooltip title="Brush" placement="right">
+              <BrushIcon />
+            </Tooltip>
           </ToggleButton>
+          
           <ToggleButton value="edit" disabled>
-            <EditIcon />
+            <Tooltip title="Pencil" placement="right">
+              <EditIcon />
+            </Tooltip>
           </ToggleButton>
+          
           <ToggleButton value="colorize" disabled>
-            <ColorizeIcon />
+            <Tooltip title="Color Picker" placement="right">
+              <ColorizeIcon />
+            </Tooltip>
           </ToggleButton>
+          
           <ToggleButton value="crop" disabled>
-            <CropIcon />
+            <Tooltip title="Crop" placement="right">
+              <CropIcon />
+            </Tooltip>
           </ToggleButton>
+          
           <ToggleButton value="colorlens" disabled>
-            <ColorLensIcon />
+            <Tooltip title="Color Palette" placement="right">
+              <ColorLensIcon />
+            </Tooltip>
           </ToggleButton>
+
           <ToggleButton value="formatcolorfill" disabled>
-            <FormatColorFillIcon />
+            <Tooltip title="Color Fill" placement="right">
+              <FormatColorFillIcon />
+            </Tooltip>
           </ToggleButton>
 
           <ToggleButton disabled value="blankspace" />
           
           <ToggleButton value="savealt" onClick={this.props.onDownloadImage}>
-            <SaveAltIcon />
+            <Tooltip title="Download Image" placement="left">
+              <SaveAltIcon />
+            </Tooltip>
           </ToggleButton>
+
           <ToggleButton value="save" disabled>
-            <SaveIcon />
+            <Tooltip title="Brush" placement="left">
+              <SaveIcon />
+            </Tooltip>
           </ToggleButton>
           
           <ToggleButton disabled value="blankspace" />
           
           <ToggleButton value="deleteforever" className={classes.trashIcon} onClick={this.props.onClearCanvas}>
-            <DeleteForeverIcon />
+            <Tooltip title="Clear Canvas" placement="right">
+              <DeleteForeverIcon />
+            </Tooltip>
           </ToggleButton>
 
         </ToggleButtonGroup>

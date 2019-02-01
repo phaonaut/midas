@@ -1,13 +1,13 @@
-Create two tool blocks, disable things that arent ready
-
-
 Drawing only when hovering a live draw area
 
-Red BG for Clear Icon and Clear the Canvas
+Color picker tool bar, button displays this panel
 
-Disable all Icons except the ones that work
+Brush/Pencil Toolbar size and other slider options
 
-Add Tool Tips to icons
+Project info box, has canvas size and other info
+
+Cant draw unless drawing tool is selected
+
 
 Make it so sketch on counts/draws if you are on the sketch
 
