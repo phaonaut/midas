@@ -1,3 +1,5 @@
+0.1.0 release
+
 Drawing only when hovering a live draw area, Cant draw unless drawing tool is selected
 
 Project info box, has canvas size and other info
@@ -8,11 +10,13 @@ find a way to smoooth out brush
 
 on window size change sent new position props
 
-ability to select stroke color
+info popup when you click on mida logo
 
 add 10 step increments for cursor and better way than ternary
 
 color window next to brush and stroke
+
+list of your previous selected colors (last 10)
 
 ability to clear color
 
@@ -21,6 +25,17 @@ add a save menu where you can enter custom file name and save type
 Make it so sketch on counts/draws if you are on the sketch
 
 Build Out functionality and slowly build online
+
+0.2.0 release
+ability to select stroke color //pencil only
+
+0.3.0 release
+Create layers
+0.4.0 release
+0.5.0 release
+1.0.0 release
+Create module support for inputs
+
 
 ---------------
 

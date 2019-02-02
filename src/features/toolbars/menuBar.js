@@ -7,12 +7,11 @@ const styles = theme => ({
     display: 'flex',
     background: theme.palette.background.default,
   },
-  headerName: {
-    position: "fixed",
-    left: "calc(100vw / 2)"
+  buttonTextEffect: {
+    textDecoration: "underline"
   },
   headerTextEffect: {
-    color: "#666",
+    color: "gold",
     userSelect: "none",
     fontWeight: "bold"
   }
@@ -23,13 +22,13 @@ class MenuBar extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.container}>
-        <div>
-          <Button disabled>File</Button>
-          <Button disabled>Edit</Button>
-          <Button disabled>Select</Button>
-        </div>
         <div className={classes.headerName}>
-          <Button className={classes.headerTextEffect} disabled>MIDAS</Button>
+          <Button className={classes.headerTextEffect} disabled>[ MIDAS ]</Button>
+        </div>
+        <div>
+          <Button className={classes.buttonTextEffect} disabled>File</Button>
+          <Button className={classes.buttonTextEffect} disabled>Edit</Button>
+          <Button className={classes.buttonTextEffect} disabled>Select</Button>
         </div>
       </div>
     );
