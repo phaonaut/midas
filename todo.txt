@@ -1,14 +1,20 @@
-Drawing only when hovering a live draw area
+Drawing only when hovering a live draw area, Cant draw unless drawing tool is selected
 
 Project info box, has canvas size and other info
 
-Cant draw unless drawing tool is selected
+minimize option for dragme and includes header name
 
+find a way to smoooth out brush
 
-replace fave icon with gold square
+on window size change sent new position props
 
-replace cursor with brush image
-https://stackoverflow.com/questions/49703094/how-can-i-replace-my-cursor-with-a-circle-instead-of-drawing-it-to-canvas-in-p5
+ability to select stroke color
+
+add 10 step increments for cursor and better way than ternary
+
+color window next to brush and stroke
+
+ability to clear color
 
 add a save menu where you can enter custom file name and save type
 
@@ -18,7 +24,9 @@ Build Out functionality and slowly build online
 
 ---------------
 
-
+x replace cursor with brush image
+  https://stackoverflow.com/questions/49703094/how-can-i-replace-my-cursor-with-a-circle-instead-of-drawing-it-to-canvas-in-p5
+x replace fave icon with gold square
 x add midas name to header
 x Color picker tool bar, button displays this panel
 x Brush/Pencil Toolbar size and other slider options

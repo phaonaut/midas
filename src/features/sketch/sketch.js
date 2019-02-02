@@ -27,6 +27,7 @@ export default function sketch(p) {
       if (p.mouseIsPressed) {
         p.fill(fillColor);
         p.ellipse(p.mouseX, p.mouseY, brushRadius, brushRadius, 50);
+        // p.rect(p.mouseX, p.mouseY, brushRadius, brushRadius);
         // p.stroke(strokeColor);
         // p.filter( p.BLUR, 6 ); //slow as fudge
       } else {

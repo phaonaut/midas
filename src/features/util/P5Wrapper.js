@@ -21,6 +21,23 @@ export default class P5Wrapper extends React.Component {
   }
 
   render() {
-    return <div ref={wrapper => this.wrapper = wrapper}></div>;
+    const brushSize = this.props.brush.radius || 0;
+    const cursor = brushSize > 75 ? styles.cursor100 : brushSize > 50 ? styles.cursor75 : brushSize > 25 ? styles.cursor50 : styles.cursor25;
+    return <div style={cursor} ref={wrapper => this.wrapper = wrapper}></div>;
   }
 }
+
+const styles = {
+  cursor25: {
+    cursor: "url(cursors/cursor25.png) 12 12, auto"
+  },
+  cursor50: {
+    cursor: "url(cursors/cursor50.png) 25 25, auto"
+  },
+  cursor75: {
+    cursor: "url(cursors/cursor75.png) 35 35, auto"
+  },
+  cursor100: {
+    cursor: "url(cursors/cursor100.png) 50 50, auto"
+  }
+};
