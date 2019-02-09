@@ -3,7 +3,7 @@ import './App.css';
 import P5Wrapper from "./util/P5Wrapper";
 import sketch from "./sketch/sketch";
 import withDragMe from "./util/withDragMe";
-import MenuBar from "./toolbars/menuBar";
+import AppMenu from "./appMenu/appMenu";
 import Toolbar from "./toolbars/toolbar";
 import BrushToolbar from "./toolbars/brushToolbar";
 import ColorPickerBar from "./toolbars/colorPickerBar";
@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MenuBar/>
+        <AppMenu/>
         <div style={{position: "relative"}}>
           <ToolbarWithDragMe
             onDownloadImage={this.onDownloadImage}
