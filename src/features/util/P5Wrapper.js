@@ -1,21 +1,20 @@
-import React from 'react';
-import p5 from 'p5';
+import React from "react";
+import p5 from "p5";
 
 export default class P5Wrapper extends React.Component {
-
   componentDidMount() {
     this.canvas = new p5(this.props.sketch, this.wrapper);
-    if( this.canvas.myCustomRedrawAccordingToNewPropsHandler ) {
+    if (this.canvas.myCustomRedrawAccordingToNewPropsHandler) {
       this.canvas.myCustomRedrawAccordingToNewPropsHandler(this.props);
     }
   }
 
-  componentWillReceiveProps(newprops) {
-    if(this.props.sketch !== newprops.sketch){
+  UNSAFE_componentWillReceiveProps(newprops) {
+    if (this.props.sketch !== newprops.sketch) {
       this.wrapper.removeChild(this.wrapper.childNodes[0]);
       this.canvas = new p5(newprops.sketch, this.wrapper);
     }
-    if( this.canvas.myCustomRedrawAccordingToNewPropsHandler ) {
+    if (this.canvas.myCustomRedrawAccordingToNewPropsHandler) {
       this.canvas.myCustomRedrawAccordingToNewPropsHandler(newprops);
     }
   }
@@ -23,7 +22,7 @@ export default class P5Wrapper extends React.Component {
   render() {
     const brushSize = this.props.brush.radius || 0;
     const cursor = brushSize > 75 ? styles.cursor100 : brushSize > 50 ? styles.cursor75 : brushSize > 25 ? styles.cursor50 : styles.cursor25;
-    return <div style={cursor} ref={wrapper => this.wrapper = wrapper}></div>;
+    return <div style={cursor} ref={wrapper => (this.wrapper = wrapper)} />;
   }
 }
 

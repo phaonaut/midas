@@ -1,21 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Tooltip, withStyles} from '@material-ui/core';
-import {ToggleButton, ToggleButtonGroup} from '@material-ui/lab';
-import {Brush as BrushIcon, Colorize as ColorizeIcon, ColorLens as ColorLensIcon,
-        Crop as CropIcon, DeleteForever as DeleteForeverIcon, Edit as EditIcon,
-        FormatColorFill as FormatColorFillIcon, SaveAlt as SaveAltIcon, Save as SaveIcon} from '@material-ui/icons';
+import React from "react";
+import PropTypes from "prop-types";
+import { Tooltip, withStyles } from "@material-ui/core";
+import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
+import {
+  Brush as BrushIcon,
+  Colorize as ColorizeIcon,
+  ColorLens as ColorLensIcon,
+  Crop as CropIcon,
+  DeleteForever as DeleteForeverIcon,
+  Edit as EditIcon,
+  FormatColorFill as FormatColorFillIcon,
+  SaveAlt as SaveAltIcon,
+  Save as SaveIcon
+} from "@material-ui/icons";
 
 const styles = theme => ({
   toggleContainer: {
     // height: 56,
     // width: 200,
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit}px`,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    margin: `${theme.spacing.unit / 2}px`,
-    background: theme.palette.background.default,
+    padding: `${theme.spacing()}px ${theme.spacing()}px`,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    margin: `${theme.spacing() / 2}px`,
+    background: theme.palette.background.default
   },
   root: {
     display: "flex",
@@ -30,7 +38,7 @@ const styles = theme => ({
 
 class BrushToolBar extends React.Component {
   state = {
-    selectedTool: 'brush'
+    selectedTool: "brush"
   };
 
   handleAlignment = (event, selectedTool) => this.setState({ selectedTool });
@@ -47,25 +55,25 @@ class BrushToolBar extends React.Component {
               <BrushIcon />
             </Tooltip>
           </ToggleButton>
-          
+
           <ToggleButton value="edit" disabled>
             <Tooltip title="Pencil" placement="right">
               <EditIcon />
             </Tooltip>
           </ToggleButton>
-          
+
           <ToggleButton value="colorize" disabled>
             <Tooltip title="Color Picker" placement="right">
               <ColorizeIcon />
             </Tooltip>
           </ToggleButton>
-          
+
           <ToggleButton value="crop" disabled>
             <Tooltip title="Crop" placement="right">
               <CropIcon />
             </Tooltip>
           </ToggleButton>
-          
+
           <ToggleButton value="colorlens" disabled>
             <Tooltip title="Color Palette" placement="right">
               <ColorLensIcon />
@@ -79,7 +87,7 @@ class BrushToolBar extends React.Component {
           </ToggleButton>
 
           <ToggleButton disabled value="blankspace" />
-          
+
           <ToggleButton value="savealt" onClick={this.props.onDownloadImage}>
             <Tooltip title="Download Image" placement="left">
               <SaveAltIcon />
@@ -91,15 +99,14 @@ class BrushToolBar extends React.Component {
               <SaveIcon />
             </Tooltip>
           </ToggleButton>
-          
+
           <ToggleButton disabled value="blankspace" />
-          
+
           <ToggleButton value="deleteforever" className={classes.trashIcon} onClick={this.props.onClearCanvas}>
             <Tooltip title="Clear Canvas" placement="right">
               <DeleteForeverIcon />
             </Tooltip>
           </ToggleButton>
-
         </ToggleButtonGroup>
       </div>
     );

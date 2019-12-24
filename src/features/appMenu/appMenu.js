@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles, Button, Popover, Typography } from '@material-ui/core';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles, Button, Popover, Typography } from "@material-ui/core";
 
 const styles = theme => ({
   container: {
-    display: 'flex',
-    background: theme.palette.background.default,
+    display: "flex",
+    background: theme.palette.background.default
   },
   buttonTextEffect: {
     textDecoration: "underline"
@@ -19,24 +19,24 @@ const styles = theme => ({
     }
   },
   typography: {
-    margin: theme.spacing.unit * 2,
-  },
+    margin: theme.spacing(2)
+  }
 });
 
 class MenuBar extends React.Component {
   state = {
-    anchorEl: null,
+    anchorEl: null
   };
 
   handleClick = event => {
     this.setState({
-      anchorEl: event.currentTarget,
+      anchorEl: event.currentTarget
     });
   };
 
   handleClose = () => {
     this.setState({
-      anchorEl: null,
+      anchorEl: null
     });
   };
 
@@ -48,28 +48,38 @@ class MenuBar extends React.Component {
     return (
       <div className={classes.container}>
         <div className={classes.headerName}>
-          <Button className={classes.headerTextEffect} onClick={this.handleClick}>[ MIDAS ]</Button>
+          <Button className={classes.headerTextEffect} onClick={this.handleClick}>
+            [ MIDAS ]
+          </Button>
         </div>
         <div>
-          <Button className={classes.buttonTextEffect} disabled>File</Button>
-          <Button className={classes.buttonTextEffect} disabled>Edit</Button>
-          <Button className={classes.buttonTextEffect} disabled>Select</Button>
+          <Button className={classes.buttonTextEffect} disabled>
+            File
+          </Button>
+          <Button className={classes.buttonTextEffect} disabled>
+            Edit
+          </Button>
+          <Button className={classes.buttonTextEffect} disabled>
+            Select
+          </Button>
         </div>
         <Popover
           id="simple-popper"
           open={open}
           anchorEl={anchorEl}
           onClose={this.handleClose}
-          anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
-          transformOrigin={{vertical: 'top', horizontal: 'center'}}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          transformOrigin={{ vertical: "top", horizontal: "center" }}
         >
           <div>
             <Typography className={classes.typography}>Midas Drawing App</Typography>
             <Typography className={classes.typography}>Built using P5 Processing</Typography>
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               <Typography className={classes.typography}>Rodney Gordon</Typography>
               <Typography className={classes.typography}>
-                <a href="https://github.com/phaonaut/midas" target="blank">github repo</a>
+                <a href="https://github.com/phaonaut/midas" target="blank">
+                  github repo
+                </a>
               </Typography>
             </div>
           </div>

@@ -6,12 +6,12 @@ import { Slider } from "@material-ui/core";
 const styles = theme => ({
   container: {
     width: 300,
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit}px`,
+    padding: `${theme.spacing()}px ${theme.spacing()}px`,
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-start",
     flexDirection: "column",
-    margin: `${theme.spacing.unit / 2}px`,
+    margin: `${theme.spacing() / 2}px`,
     background: theme.palette.background.default
   },
   sliderContainer: {
