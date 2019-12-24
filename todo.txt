@@ -1,0 +1,48 @@
+0.1.0 release
+
+add 10 step increments for cursor and better way than ternary
+
+Project info box, has canvas size and other info
+
+
+find a way to smoooth out brush
+
+on window size change sent new position props
+
+
+color window next to brush and stroke
+
+list of your previous selected colors (last 10)
+
+ability to clear color
+
+add a save menu where you can enter custom file name and save type
+
+Make it so sketch on counts/draws if you are on the sketch
+
+Build Out functionality and slowly build online
+
+brush presets constants
+
+
+0.2.0 release
+ability to select stroke color //pencil only
+
+0.3.0 release
+minimize option for dragme and includes header name
+Create layers
+0.4.0 release
+0.5.0 release
+1.0.0 release
+Create module support for inputs
+
+
+---------------
+x info popup when you click on mida logo
+x replace cursor with brush image
+  https://stackoverflow.com/questions/49703094/how-can-i-replace-my-cursor-with-a-circle-instead-of-drawing-it-to-canvas-in-p5
+x replace fave icon with gold square
+x add midas name to header
+x Color picker tool bar, button displays this panel
+x Brush/Pencil Toolbar size and other slider options
+X add app border and menu (file, edit, create)
